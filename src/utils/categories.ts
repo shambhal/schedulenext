@@ -2,6 +2,8 @@ import { site_details } from "@/config";
 
 export async function fetchCategories() {
 let url=site_details.url+'cats/';
+console.log(url);
+//return;
     const res = await fetch(`${site_details.url}cats/`);
    // console.log("fetching categories");
     const json = await res.json();

@@ -10,7 +10,7 @@ let [cats,setCats]=useState([])
 
 useEffect(()=>{fetch(r).then((res)=>res.json()).then((d)=>{
 console.log("what received from there")
-  console.log(d);
+//  console.log(d);
   setCats(d);
 }).catch(()=>{})
 

@@ -1,0 +1,18 @@
+{
+"cat":"Categories",
+"Contact":"Contact",
+"quick":"Quick Links",
+"btn_send":"Send",
+"error_occured":"Error Occured",
+"loading":"loading ..",
+"empty_cart":"Cart is empty",
+"site_name":"SUMATI APP",
+"menu_home":"Home",
+"menu_account":"Account",
+"menu_register":"Register",
+"menu_my_account":"My Account",
+"menu_checkout":"Checkout",
+"request_failed":"Request Failed",
+"checking_status":"Checking Status",
+"something_wrong":"Something Wrong"
+}

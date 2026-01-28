@@ -3,7 +3,16 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+function formatDate(dd1:string)
+{ let dd=new Date(dd1);
+const formatted = dd.toLocaleDateString('en-GB', {
+  day: '2-digit',
+  month: 'short',
+  year: 'numeric',
+});
+return formatted;
 
+}
 export default function BookingModal({ open, onClose, onConfirm, slot, date }: any) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -17,7 +26,7 @@ export default function BookingModal({ open, onClose, onConfirm, slot, date }: a
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Book Slot: {slot}</DialogTitle>
+          <DialogTitle>Book Slot: {slot} {formatDate(`${date}`)}</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-3">

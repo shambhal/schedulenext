@@ -1,5 +1,5 @@
 import Navbar from "@/_components/navbar";
-
+import Footer from '@/_components/footer'
 interface Category {
   id: number;
   name: string;
@@ -16,6 +16,7 @@ export default function Layout({ categories, children }: LayoutProps) {
     <>
       <Navbar categories={categories} />
       <main className="p-4">{children}</main>
+      <Footer />
     </>
   );
 }
