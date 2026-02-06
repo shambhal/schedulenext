@@ -31,7 +31,7 @@ function getOffSlabs(rangeStr, intervalMinutes = 30) {
   // Parse the time ranges
   if(rangeStr=='' || rangeStr==undefined)
     return []
-console.log(rangeStr);
+
   const ranges = rangeStr.split(";").map(range => {
     const [start, end] = range.split("-");
     return {

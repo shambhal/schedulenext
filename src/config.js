@@ -1,12 +1,18 @@
-export const site_details={
+/*export const site_details={
 'url1':'http://fastapi:8080/',
 'url':'http://localhost:8080/',
 'curl':'http://localhost:8080/',
 'myurl':'http://localhost:3000/',
 'imurl':'http://localhost:8001/media/'
 
+}*/
+export const site_details = {
+  url1: process.env.NEXT_PUBLIC_URL1,
+  url: process.env.NEXT_PUBLIC_URL,
+  curl: process.env.NEXT_PUBLIC_CURL,
+  myurl: process.env.NEXT_PUBLIC_MYURL,
+  imurl: process.env.NEXT_PUBLIC_IMURL,
 }
-
 export const jwtsetting=
 {
 
