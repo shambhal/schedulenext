@@ -58,7 +58,12 @@ export default function Schedule({  doctor_id,category_id, date: initialDate, })
   const [modalOpen, setModalOpen] = useState(false);
 const [selectedSlot, setSelectedSlot] = useState('');
 
-const [cartSlots, setCartSlots] = useState(() => getDSlots());
+const [cartSlots, setCartSlots] = useState([]);
+
+useEffect(() => {
+  const slots = getDSlots();
+  setCartSlots(slots);
+}, []);
 const [doctorInfo,setDoctorInfo]=useState({bio:null,image:null});
 console.log(cartSlots);
  const handleBook = (slot: string) => {
@@ -177,7 +182,7 @@ console.log("result from the fetch ,cart ");
     const formatted=localDateStr;
     console.log(formatted);
     setLoading(true);
-    const url = `${site_details.curl}doctorschedule/${doctor_id}?dat=${formatted}`;
+    const url = `${site_details.curl}doctor/schedule/${doctor_id}?dat=${formatted}`;
     fetch(url)
       .then((res) => res.json())
       .then((fetched) => {

@@ -5,7 +5,7 @@ import {settings} from '../settings';
 export default function Catnames()
   {
 const r=settings.host+'cats/list';
-console.log(r);
+
 let [cats,setCats]=useState([])
 
 useEffect(()=>{fetch(r).then((res)=>res.json()).then((d)=>{

@@ -259,6 +259,6 @@ export function getAvailableSlots(data, targetDateStr) {
 
     start = slotEnd;
   }
-
+console.log(slots)
   return slots;
 }

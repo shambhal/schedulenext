@@ -1,4 +1,4 @@
-"use client"
+
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -52,7 +52,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
     //console.log(site_details.url + 'banners/by_tag/?tag=home');
     if (res.ok) {
       banners = await res.json();
-     //. console.log(banners);
+   console.log(banners);
     } else {
       console.warn('Failed to fetch banners');
     }

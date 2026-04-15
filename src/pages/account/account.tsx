@@ -9,6 +9,7 @@ import  {UserInfo}  from "@/lib/utils";
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+/*
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
@@ -16,6 +17,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
     },
   };
 }
+  */
 export default function AccountPage() {
   const router = useRouter();
   const {t}=useTranslation(["account","common"])
