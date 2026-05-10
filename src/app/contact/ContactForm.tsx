@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl';
 
 export default function ContactForm() {
 
-  const t = useTranslations('contact');
+  const t = useTranslations();
 
   const [form, setForm] = useState({
     name: "",

@@ -46,7 +46,7 @@ return;
       .catch(() => setCheckingAuth(false));
   }, [router]);
 
-  if (checkingAuth) return <p className="p-8 text-center">{t('account:text_checking_auth')}..</p>;
+  if (checkingAuth) return <p className="p-8 text-center">{t('account.text_checking_auth')}..</p>;
 
   return (
     <div className="max-w-2xl mx-auto mt-8 p-6 bg-white shadow rounded-lg">

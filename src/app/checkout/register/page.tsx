@@ -60,12 +60,12 @@ export default function RegisterPage() {
   return (<>
  
     <div className="max-w-md mx-auto p-6 bg-white shadow rounded-lg">
-      <h1 className="text-xl font-bold mb-4">{t("checkout:customer_reg")}</h1>
+      <h1 className="text-xl font-bold mb-4">{t("checkout.customer_reg")}</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
           name="name"
-          placeholder={t("checkout:field_name")}
+          placeholder={t("checkout.field_name")}
                     value={form.name}
           onChange={handleChange}
           className="w-full border p-2 rounded"
@@ -74,7 +74,7 @@ export default function RegisterPage() {
         <input
           type="email"
           name="email"
-          placeholder={t("checkout:field_email")}
+          placeholder={t("checkout.field_email")}
           value={form.email}
           onChange={handleChange}
           className="w-full border p-2 rounded"
@@ -83,7 +83,7 @@ export default function RegisterPage() {
         <input
           type="tel"
           name="phone"
-          placeholder={t("checkout:field_mobile")}
+          placeholder={t("checkout.field_mobile")}
           value={form.phone}
           onChange={handleChange}
           className="w-full border p-2 rounded"
@@ -93,7 +93,7 @@ export default function RegisterPage() {
         <input
           type="password"
           name="password"
-          placeholder={t("checkout:field_password")}
+          placeholder={t("checkout.field_password")}
           value={form.password}
           onChange={handleChange}
           className="w-full border p-2 rounded"
@@ -104,7 +104,7 @@ export default function RegisterPage() {
           disabled={loading}
           className="w-full bg-blue-600 text-white py-2 rounded"
         >
-          {loading ? t("text_registering") : t("checkout:text_register")}
+          {loading ? t("text_registering") : t("checkout.text_register")}
         </button>
       </form>
     {message && (
