@@ -3,9 +3,9 @@ import { site_details } from "@/config";
 import { clearCart } from "@/utils/cartf";
 import { clearCartServer } from "@/utils/cartfunctions";
 import { useEffect, useState } from "react";
-import { serverSideTranslations } from 'next-intl/serverSideTranslations';
-import { useTranslations } from 'next--intl/server';
 
+
+import { useTranslations } from "next-intl";
 export default function OrderStatusPage() {
   const [orderId, setOrderId] = useState("");
   const [email, setEmail] = useState("");
