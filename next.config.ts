@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
-const { i18n } = require('./next-i18next.config');
-//import withFlowbiteReact from "flowbite-react/plugin/nextjs";
 
+//import withFlowbiteReact from "flowbite-react/plugin/nextjs";
+import createNextIntlPlugin from 'next-intl/plugin';
 const nextConfig: NextConfig = {
   /* config options here */
-  i18n,
+
    eslint: {
     ignoreDuringBuilds: true,
   },
@@ -26,4 +26,5 @@ const nextConfig: NextConfig = {
 
 
 //export default withFlowbiteReact(nextConfig);
-export default (nextConfig)
+const withNextIntl = createNextIntlPlugin();
+export default withNextIntl(nextConfig)

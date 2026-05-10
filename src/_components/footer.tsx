@@ -1,5 +1,5 @@
 "use client";
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from 'next-intl';
 import Link from "next/link";
 import { site_details } from "@/config";
 import { useEffect, useState } from "react";
@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function Footer() {
   const [links, setLinks] = useState<{ seo_url: string; title: string }[]>([]);
    const [social, setSlinks] = useState<{ cname: string; cvalue: string }[]>([]);
-const { t } = useTranslation('common');
+const t = useTranslations();
   useEffect(() => {
     
     async function fetchLinks() {
@@ -52,7 +52,7 @@ const fb = social.find(obj => obj.cname === "fb_id");
             <p className="px-5 py-10">One of the finest agencies in the town</p>
           </div>
           <div className="border-l px-5 md:w-1/2">
-            <h1>{t('quick')}</h1>
+            <h1>{t('common.quick')}</h1>
             <ul>
               {links.map((link) => (
                 <li key={link.seo_url}>

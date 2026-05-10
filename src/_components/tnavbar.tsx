@@ -20,7 +20,7 @@ export async function getServerSideProps() {
   }
 
   const json = await res.json();
-console.log(json);
+//console.log(json);
   if ('categories' in json) {
     return { props: { categories: [] } };
   } else {

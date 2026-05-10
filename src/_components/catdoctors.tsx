@@ -21,9 +21,9 @@ import { site_details } from "@/config";
 import Link from "next/link";
 import Image from "next/image";
 
-import { useTranslation } from "next-i18next";
+ import {useTranslations } from 'next-intl';
 export default function Doctors({ darray ,category_id,catname}: CatProps) {
-  const {t}=useTranslation('checkout');
+  const t=useTranslations();
   if (darray.length === 0) return null;
 
   return (
@@ -53,7 +53,7 @@ export default function Doctors({ darray ,category_id,catname}: CatProps) {
 </div>
 
         
-          <p><Link href={`/schedule/${node.id}/${category_id}`}>{t("button_book")}</Link></p>
+          <p><Link href={`/schedule/${node.id}/${category_id}`}>{t("checkout.button_book")}</Link></p>
         </div>
       ))}
     </div>

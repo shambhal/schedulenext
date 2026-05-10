@@ -1,5 +1,5 @@
 'use client';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import Link from "next/link";
 import { generateUUID, site_details } from "@/config";
@@ -21,20 +21,32 @@ interface Category {
   slug: string;
   id: number;
 }
+interface SiteSettings
+{
+cname:string,
+cvalue:string,
+
+}
 
 interface NavbarProps {
   categories: Category[];
+ssettings:SiteSettings[],
   error?: string;
 }
 type SocialConfig = {
   cname: string;
   cvalue: string;
 };
-export default function Navbar({ categories, error }: NavbarProps) {
-  const { t } = useTranslation('common');
+export default function Navbar({ categories, ssettings,error }: NavbarProps) {
+  const t  = useTranslations();
 const { CartCount, setCartCount,setItems } = useCart();
+//console.log(` settings down`);
+//console.log(ssettings);
    const [logo, setLogo] = useState<{ cname: string; cvalue: string }>();
-    useEffect(() => {
+  
+let logotemp= ssettings?.find(obj=>obj.cname=="logo");
+ 
+  /*  useEffect(() => {
     
     async function fetchSocial() {
       const res = await fetch(site_details.curl + "config/settings", {
@@ -48,6 +60,8 @@ const { CartCount, setCartCount,setItems } = useCart();
     }
    fetchSocial();
   }, []); // ✅ run once on mount
+  */
+
 useEffect(() => {
     fetchCart().then(({ count ,items}) => {
       if (count >= 0) { setCartCount(count); setItems(items);}
@@ -55,14 +69,14 @@ useEffect(() => {
       
     });
   }, [setCartCount]);
+ 
 
   return (
     <div className="flex justify-between p-2 bg-red-600 text-white">
       <div className="text-md font-bold">
-       {logo &&( <a href="index.html"><img
-  src={`${site_details.imurl}${logo.cvalue}`}
-  alt="Logo"
-/></a>)}
+       {logotemp &&( <a href="index.html"><img
+  src={`${site_details.imurl}${logotemp.cvalue}`}
+  alt="Logo"/></a>)}
       </div>
 
       <div className="w-2/3">
@@ -70,18 +84,18 @@ useEffect(() => {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/">{t("common:menu_home")}</Link>
+                <Link href="/">{t("common.menu_home")}</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/contact">{t('Contact')}</Link>
+                <Link href="/contact">{t('common.contact')}</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-amber">{t('cat')}</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-amber">{t('common.cat')}</NavigationMenuTrigger>
               <NavigationMenuContent className="bg-red-800 border-0 rounded-none">
                 <ul className="grid w-[200px] gap-4 rounded-none">
                   {categories.map((cat) => (
@@ -97,7 +111,7 @@ useEffect(() => {
               </NavigationMenuContent>
             </NavigationMenuItem>
              <NavigationMenuItem className='rounded-none'>
-                 <NavigationMenuTrigger className="bg-amber">{t("common:menu_account")}</NavigationMenuTrigger>
+                 <NavigationMenuTrigger className="bg-amber">{t("common.menu_account")}</NavigationMenuTrigger>
                  
                  <NavigationMenuContent className="bg-red-800 border-0 rounded-none">
                    <NavigationMenuLink asChild>
@@ -105,13 +119,13 @@ useEffect(() => {
                 
                 
                 
-                " className="border-b border-r-0 border-white">{t("common:menu_my_account")}</Link>
+                " className="border-b border-r-0 border-white">{t("common.menu_my_account")}</Link>
               </NavigationMenuLink>
                    <NavigationMenuLink asChild>
-                <Link href="/checkout/register" className="border-b border-r-0 border-white">{t("common:menu_register")}</Link>
+                <Link href="/checkout/register" className="border-b border-r-0 border-white">{t("common.menu_register")}</Link>
               </NavigationMenuLink>
                <NavigationMenuLink asChild>
-                <Link href="/checkout/checkout" className="border-b border-white">{t("menu_checkout")}</Link>
+                <Link href="/checkout/checkout" className="border-b border-white">{t("common.menu_checkout")}</Link>
               </NavigationMenuLink>
 
 

@@ -1,0 +1,18 @@
+{
+"order_failed":"Order Failed",
+"update_order_failed":"Update Order Failed",
+"create_order_failed":"Create Order Failed",
+"order_status":"Order Status",
+"login_successful":"Login Successful",
+"field_password":"Password",
+"field_name":"Name",
+"register_success":"Registered successfully",
+"invalid_credentials":"Invalid Credentials",
+"customer_reg":"Customer Registration",
+"field_email":"Email",
+"field_mobile":"Mobile",
+"registering":"Registering...",
+"text_register":"Register",
+"heading_register":"Register",
+"button_book":"Book Appointment"
+}
